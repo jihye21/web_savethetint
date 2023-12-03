@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>save the tint Website</title>
+    <link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Save the Tint
+            <!--img src="https://vignette.wikia.nocookie.net/logopedia/images/6/66/Blizzard_Entertainment_Logo_2015x.png/revision/latest?cb=20180409151508" alt="Website Logo"-->
+            </div>
+            <a href="#">Home</a>
+            <a href="#">Games</a>
+            <a href="#">News</a>
+            <a href="#">Community</a>
+            <div class="account">
+                <?php
+                    session_start();
+
+                    if(isset($_SESSION['email'])) {
+                        $email = $_SESSION['email'];
+                        echo "$email";
+                    } else {
+                        // 세션에 이메일 정보가 없을 경우, 로그인되지 않은 상태 메시지 출력
+                        echo "로그인되지 않았습니다.";
+                    }
+                ?>
+                <img src="https://www.pngjoy.com/pngm/295/24977139_individual-account-sunrise-movement-logo.png" alt="계정 로고">
+                <div class="account-menu">
+                    <a href="#">계정 관리</a>
+                    <a href="#">고객지원</a>
+                    <a href="test.index.html">로그아웃</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="slideshow-container">
+  <div class="mySlides">
+    <img src="https://th.bing.com/th/id/R.8c8c0570495d3f4b66e269a81aa4bc22?rik=hQwzNJ3YLwP31g&riu=http%3a%2f%2ffile3.instiz.net%2fdata%2ffile3%2f2023%2f05%2f14%2ff%2f0%2fd%2ff0dbec72b6ae58b21ba16cf6c25f73a2.jpg&ehk=jmm6k7KkF5FT4c6GCoTZuweE9Q4bgL8Jw4Wplf%2br7Oo%3d&risl=&pid=ImgRaw&r=0" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/761/e82e15eb9e68c89d305aa76f4e31789c_res.jpeg" style="width:100%">
+  </div>
+
+  <!-- Add more slides as needed -->
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+  }
+</script>
+
+    <main class="main-content">
+        <section class="featured-pic">
+        <h2>최고의 플레이</h2>
+            <button class="round-button1" onclick="alert('Round Button Clicked')">Click me!</button>
+            <button class="round-button2" onclick="alert('Round Button Clicked')">Click me!</button>
+            <button class="round-button3" onclick="alert('Round Button Clicked')">Click me!</button>
+        </section>
+            <div class="card-container">
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/df/d5/41/dfd541e3fdc0453e0fecc0599159ab69.jpg" alt="Game Image 1">
+            <p>Description of the first featured game goes here.</p>
+        </div>
+        <div class="card">
+            <img src="https://image.fmkorea.com/files/attach/new3/20230513/486616/1085991862/5763770347/e40a85fac4d98afdae3ef943f1c0ec00.jpeg" alt="Game Image 2">
+            <p>Description of the second featured game goes here.</p>
+        </div>
+        <div class="card">
+            <img src="https://th.bing.com/th/id/OIP.Ijy3VuiYFaaW6OPNuWj7uwHaHa?rs=1&pid=ImgDetMain" alt="Game Image 3">
+            <p>Description of the third featured game goes here.</p>
+        </div>
+        <div class="card">
+            <img src="https://pbs.twimg.com/media/FD5l-PeaAAEHWyi?format=jpg&name=medium" alt="Game Image 4">
+            <p>Description of the fourth featured game goes here.</p>
+        </div>
+        <div class="card">
+            <img src="https://pbs.twimg.com/media/FxgsRCMaQAAdI8s.jpg" alt="Game Image 5">
+            <p>Description of the fifth featured game goes here.</p>
+        </div>
+        <div class="card">
+            <img src="https://image.fmkorea.com/files/attach/new3/20230525/486616/3884080515/5804653300/f0a815e98f4da9a79cbd47aa2449ef4e.jpg" alt="Game Image 6">
+            <p>Description of the sixth featured game goes here.</p>
+        </div>
+    </div>
+
+        <div class="game-box">
+    <h2>save the tint</h2>
+    <p>게임 설명이나 문구를 여기에 입력하세요.</p>
+
+        <div class="button-container">
+            <button class="download-button">다운로드</button>
+            <button class="details-button">자세히 보기</button>
+        </div>
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2023 save the tint Website. All rights reserved.</p>
+    </footer>
+    <script src="test.js"></script>
+</body>
+</html>
